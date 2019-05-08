@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="DVVK" customModuleProvider="target">
+            <connections>
+                <outlet property="logoView" destination="jO1-Ek-Wll" id="SNE-0j-oa7"/>
+                <outlet property="singInButton" destination="ypl-QX-7KX" id="uua-It-AZS"/>
+                <outlet property="singUpButton" destination="xWR-UJ-gWX" id="kGW-lR-ZMX"/>
+                <outlet property="titleLabel" destination="8gl-ma-fvI" id="49e-Gh-rN0"/>
+                <outlet property="view" destination="iN0-l3-epB" id="NOl-09-fIj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="student" translatesAutoresizingMaskIntoConstraints="NO" id="jO1-Ek-Wll">
+                    <rect key="frame" x="16" y="76" width="382" height="156"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="156" id="AtI-Hx-hIP"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DVVK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gl-ma-fvI">
+                    <rect key="frame" x="16" y="248" width="382" height="39"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypl-QX-7KX">
+                    <rect key="frame" x="16" y="802" width="382" height="44"/>
+                    <color key="backgroundColor" name="blueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="FrY-kC-olh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Войти">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWR-UJ-gWX">
+                    <rect key="frame" x="16" y="742" width="382" height="44"/>
+                    <color key="backgroundColor" name="grayColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="6gR-s1-TwK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Зарегистрироватся">
+                        <color key="titleColor" name="blueColor"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="blueColor"/>
+            <constraints>
+                <constraint firstItem="xWR-UJ-gWX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8gl-ma-fvI" secondAttribute="top" constant="16" id="10l-3Y-5X7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ypl-QX-7KX" secondAttribute="bottom" constant="16" id="2Oc-fB-G0s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jO1-Ek-Wll" secondAttribute="trailing" constant="16" id="DfO-kw-cIY"/>
+                <constraint firstItem="ypl-QX-7KX" firstAttribute="top" secondItem="xWR-UJ-gWX" secondAttribute="bottom" constant="16" id="Ic0-fK-38S"/>
+                <constraint firstItem="ypl-QX-7KX" firstAttribute="leading" secondItem="8gl-ma-fvI" secondAttribute="leading" id="Mvj-W6-z9h"/>
+                <constraint firstItem="xWR-UJ-gWX" firstAttribute="leading" secondItem="ypl-QX-7KX" secondAttribute="leading" id="Nb8-Lh-W9X"/>
+                <constraint firstItem="jO1-Ek-Wll" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Q36-hY-XGZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ypl-QX-7KX" secondAttribute="trailing" constant="16" id="TIJ-gF-kd9"/>
+                <constraint firstItem="8gl-ma-fvI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Vpm-Jm-lex"/>
+                <constraint firstItem="xWR-UJ-gWX" firstAttribute="trailing" secondItem="ypl-QX-7KX" secondAttribute="trailing" id="csI-nH-Jqh"/>
+                <constraint firstItem="ypl-QX-7KX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="hTL-FX-SeH"/>
+                <constraint firstItem="8gl-ma-fvI" firstAttribute="top" secondItem="jO1-Ek-Wll" secondAttribute="bottom" constant="16" id="k10-TH-OBX"/>
+                <constraint firstItem="jO1-Ek-Wll" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="oBH-mE-XTI"/>
+                <constraint firstItem="ypl-QX-7KX" firstAttribute="trailing" secondItem="8gl-ma-fvI" secondAttribute="trailing" id="y7O-6q-vr3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8gl-ma-fvI" secondAttribute="trailing" constant="16" id="zxB-GN-Mwc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="student" width="512" height="512"/>
+        <namedColor name="blueColor">
+            <color red="0.29803921568627451" green="0.45882352941176469" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grayColor">
+            <color red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
