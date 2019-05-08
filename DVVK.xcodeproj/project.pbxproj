@@ -27,6 +27,7 @@
 		92E769FC22829F6E00439ABD /* RegisterCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E769FB22829F6E00439ABD /* RegisterCellModel.swift */; };
 		92E76A002282A5B600439ABD /* HeightContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E769FF2282A5B600439ABD /* HeightContainable.swift */; };
 		92E76A022282A6D700439ABD /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E76A012282A6D700439ABD /* Typealiases.swift */; };
+		9B4D2E01D709BE12B23247B2 /* Pods_DVVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29C1ABDC8DC6CF09414108B4 /* Pods-DVVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.debug.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.debug.xcconfig"; sourceTree = "<group>"; };
+		482443A7285DB07BECD66478 /* Pods-DVVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.release.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.release.xcconfig"; sourceTree = "<group>"; };
 		926C2E0F2281C6BA001FC1D2 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		926C2E112281C9E9001FC1D2 /* Extensions+NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NSLayoutConstraint.swift"; sourceTree = "<group>"; };
 		926C2E162281DB07001FC1D2 /* InfoUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		92E769FB22829F6E00439ABD /* RegisterCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellModel.swift; sourceTree = "<group>"; };
 		92E769FF2282A5B600439ABD /* HeightContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightContainable.swift; sourceTree = "<group>"; };
 		92E76A012282A6D700439ABD /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4D2E01D709BE12B23247B2 /* Pods_DVVK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E68D6336868E90235B8BDEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8142E2D70E23790ACC05DC4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29C1ABDC8DC6CF09414108B4 /* Pods-DVVK.debug.xcconfig */,
+				482443A7285DB07BECD66478 /* Pods-DVVK.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		926C2E0E2281C64A001FC1D2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +131,8 @@
 				92C98893227C8CA800E8BD7F /* DVVK */,
 				92C988A8227C8CAA00E8BD7F /* DVVKTests */,
 				92C98892227C8CA800E8BD7F /* Products */,
+				8142E2D70E23790ACC05DC4E /* Pods */,
+				6E68D6336868E90235B8BDEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -241,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92C988AE227C8CAA00E8BD7F /* Build configuration list for PBXNativeTarget "DVVK" */;
 			buildPhases = (
+				AA29AD7151D1728D05F57A82 /* [CP] Check Pods Manifest.lock */,
 				92C9888D227C8CA800E8BD7F /* Sources */,
 				92C9888E227C8CA800E8BD7F /* Frameworks */,
 				92C9888F227C8CA800E8BD7F /* Resources */,
+				E8E6FA82CAEB4B1F783CB7CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +359,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA29AD7151D1728D05F57A82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DVVK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8E6FA82CAEB4B1F783CB7CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DVVK/Pods-DVVK-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DVVK/Pods-DVVK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92C9888D227C8CA800E8BD7F /* Sources */ = {
@@ -502,6 +578,7 @@
 		};
 		92C988AF227C8CAA00E8BD7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29C1ABDC8DC6CF09414108B4 /* Pods-DVVK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -520,6 +597,7 @@
 		};
 		92C988B0227C8CAA00E8BD7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 482443A7285DB07BECD66478 /* Pods-DVVK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

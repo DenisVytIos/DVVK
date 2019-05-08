@@ -1,0 +1,6 @@
+framework module Pods_DVVK {
+  umbrella header "Pods-DVVK-umbrella.h"
+
+  export *
+  module * { export * }
+}
