@@ -11,6 +11,13 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+  
+  private let datePickerView: UIDatePicker = {
+    let picker = UIDatePicker()
+    picker.maximumDate = Date()
+    
+    return picker
+  }()
 
 //    private var models:[CellModel] = [ .userInfo]
     private let models: [HeaderModel] = [.info, .sex, .birthday]
@@ -24,8 +31,16 @@ class RegisterViewController: UIViewController {
         Decorator.decorate(vc: self)
         registerCells()
         delegating()
+      configureDatePicker()
     }
-    
+  
+  private func configureDatePicker() {
+    datePickerView.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
+  }
+  @objc private func datePickerChanged(sender: UIDatePicker){
+    let date = sender.date
+    print(date)
+  }
     private func delegating() {
         tableView.delegate   = self
         tableView.dataSource = self
@@ -39,8 +54,12 @@ class RegisterViewController: UIViewController {
     private func registerCells() {
 //        InfoUserTableViewCell
         tableView.register(InfoUserTableViewCell.nib, forCellReuseIdentifier: InfoUserTableViewCell.name)
+      tableView.register(SegmenterTableViewCell.nib, forCellReuseIdentifier: SegmenterTableViewCell.name)
+      tableView.register(TextTableViewCell.nib, forCellReuseIdentifier: TextTableViewCell.name)
+      tableView.register(TextFieldTableViewCell.nib, forCellReuseIdentifier: TextFieldTableViewCell.name)
     }
 }
+
 extension RegisterViewController {
     fileprivate enum CellModel {
         case userInfo
@@ -68,6 +87,7 @@ extension RegisterViewController {
     fileprivate class Decorator {
         static func decorate(vc: RegisterViewController) {
             vc.tableView.separatorColor = .clear
+          vc.tableView.keyboardDismissMode = .onDrag
             vc.tableView.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9450980392, alpha: 1)
             vc.navigationController?.navigationBar.prefersLargeTitles = true
             vc.tableView.contentInset = UIEdgeInsets(top: tableViewTopInset, left: 0, bottom: 0, right: 0)
@@ -81,8 +101,8 @@ extension RegisterViewController: UITableViewDelegate {
         switch model {
         case .userInfo:
                 return 100
-        default:
-            return 0
+        case .sex, .birthday:
+          return 44
         }
     }
     
@@ -103,10 +123,9 @@ extension RegisterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let headerModel = models[section]
         switch headerModel {
-        case .sex:
+        case .sex, .birthday:
             return 44
-        default:
-            return 0
+        default: return 0
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,12 +135,22 @@ extension RegisterViewController: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.name, for: indexPath) as? InfoUserTableViewCell {
                  return cell
             }
-           
-        default:
-            break
+        case .sex:
+          if let cell = tableView.dequeueReusableCell(withIdentifier: SegmenterTableViewCell.name, for: indexPath) as? SegmenterTableViewCell{
+            cell.indexChanged = {
+              index in
+              
+              print(index)
+            }
+              return cell
+          }
+        case .birthday:
+          if let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.name, for: indexPath) as? TextFieldTableViewCell{
+            cell.textField.inputView = datePickerView
+           return cell
+            
+          }
         }
-        
-        
         return UITableViewCell()
     }
     
@@ -129,7 +158,7 @@ extension RegisterViewController: UITableViewDataSource {
             return models[section].cellModels.count
         }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return models.count
     }
     }
 

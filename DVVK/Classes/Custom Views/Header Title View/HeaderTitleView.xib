@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш пол:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa2-jI-eFn">
-                    <rect key="frame" x="16" y="16" width="72" height="28"/>
+                    <rect key="frame" x="16" y="16" width="72" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="darkGrayColor"/>
                     <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xa2-jI-eFn" secondAttribute="trailing" constant="8" id="Tz0-cd-XBS"/>
                 <constraint firstItem="xa2-jI-eFn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Wgj-IR-4FI"/>
                 <constraint firstItem="xa2-jI-eFn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ZF8-4Y-ahi"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xa2-jI-eFn" secondAttribute="bottom" id="jIQ-D6-uOZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xa2-jI-eFn" secondAttribute="bottom" constant="-2" id="jIQ-D6-uOZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
