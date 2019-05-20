@@ -13,6 +13,9 @@ final class PhotoView: UIView {
     private let stackView = UIStackView()
     private let plusView = UIImageView()
     private let label = UILabel()
+  
+  var clicked: VoidClosure?
+  
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
@@ -20,6 +23,12 @@ final class PhotoView: UIView {
         addLabel()
         addPlusView()
     }
+  
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesEnded(touches, with: event)
+    clicked?()
+    
+  }
     private func addLabel() {
         label.text                                      = "Photo"
         label.translatesAutoresizingMaskIntoConstraints = false

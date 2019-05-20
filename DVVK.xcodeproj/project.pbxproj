@@ -31,11 +31,13 @@
 		92D9B32B227DD1B100A76933 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D9B329227DD1B100A76933 /* RegisterViewController.xib */; };
 		92D9B32F227DD3EE00A76933 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9B32E227DD3EE00A76933 /* PhotoView.swift */; };
 		92D9B334227DD4AE00A76933 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9B333227DD4AE00A76933 /* NibLoadable.swift */; };
-		92E769FC22829F6E00439ABD /* RegisterCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E769FB22829F6E00439ABD /* RegisterCellModel.swift */; };
 		92E76A002282A5B600439ABD /* HeightContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E769FF2282A5B600439ABD /* HeightContainable.swift */; };
 		92E76A022282A6D700439ABD /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E76A012282A6D700439ABD /* Typealiases.swift */; };
 		92E7B2BB228C7AC5005F1A0D /* SegmenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7B2B9228C7AC5005F1A0D /* SegmenterTableViewCell.swift */; };
 		92E7B2BC228C7AC5005F1A0D /* SegmenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E7B2BA228C7AC5005F1A0D /* SegmenterTableViewCell.xib */; };
+		92FA0E342292949B00AF78BE /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E332292949B00AF78BE /* RegisterModel.swift */; };
+		92FA0E362292967F00AF78BE /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E352292967F00AF78BE /* Sex.swift */; };
+		92FA0E3822929C1A00AF78BE /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E3722929C1A00AF78BE /* Extensions+UIViewController.swift */; };
 		9B4D2E01D709BE12B23247B2 /* Pods_DVVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,11 +82,13 @@
 		92D9B329227DD1B100A76933 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		92D9B32E227DD3EE00A76933 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		92D9B333227DD4AE00A76933 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		92E769FB22829F6E00439ABD /* RegisterCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellModel.swift; sourceTree = "<group>"; };
 		92E769FF2282A5B600439ABD /* HeightContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightContainable.swift; sourceTree = "<group>"; };
 		92E76A012282A6D700439ABD /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		92E7B2B9228C7AC5005F1A0D /* SegmenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmenterTableViewCell.swift; sourceTree = "<group>"; };
 		92E7B2BA228C7AC5005F1A0D /* SegmenterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmenterTableViewCell.xib; sourceTree = "<group>"; };
+		92FA0E332292949B00AF78BE /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		92FA0E352292967F00AF78BE /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		92FA0E3722929C1A00AF78BE /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +160,7 @@
 			children = (
 				926C2E0F2281C6BA001FC1D2 /* Extension+UIView.swift */,
 				926C2E112281C9E9001FC1D2 /* Extensions+NSLayoutConstraint.swift */,
+				92FA0E3722929C1A00AF78BE /* Extensions+UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -311,7 +316,8 @@
 		92E769FA22829F1000439ABD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				92E769FB22829F6E00439ABD /* RegisterCellModel.swift */,
+				92FA0E332292949B00AF78BE /* RegisterModel.swift */,
+				92FA0E352292967F00AF78BE /* Sex.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -492,16 +498,18 @@
 				92E7B2BB228C7AC5005F1A0D /* SegmenterTableViewCell.swift in Sources */,
 				926C2E102281C6BA001FC1D2 /* Extension+UIView.swift in Sources */,
 				926C2E182281DB07001FC1D2 /* InfoUserTableViewCell.swift in Sources */,
+				92FA0E342292949B00AF78BE /* RegisterModel.swift in Sources */,
 				92D9B334227DD4AE00A76933 /* NibLoadable.swift in Sources */,
 				92CC0C26227D4949000D0B17 /* Router.swift in Sources */,
 				92E76A002282A5B600439ABD /* HeightContainable.swift in Sources */,
+				92FA0E3822929C1A00AF78BE /* Extensions+UIViewController.swift in Sources */,
 				92713940228BFF5300CC441B /* CellHeaderProtocol.swift in Sources */,
 				92E76A022282A6D700439ABD /* Typealiases.swift in Sources */,
+				92FA0E362292967F00AF78BE /* Sex.swift in Sources */,
 				92D9B32F227DD3EE00A76933 /* PhotoView.swift in Sources */,
 				92C98895227C8CA800E8BD7F /* AppDelegate.swift in Sources */,
 				925D7554228D465F00ABD650 /* TextFieldTableViewCell.swift in Sources */,
 				92D9B326227DCEB100A76933 /* StartRouter.swift in Sources */,
-				92E769FC22829F6E00439ABD /* RegisterCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

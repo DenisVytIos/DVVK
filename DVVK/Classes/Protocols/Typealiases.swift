@@ -10,3 +10,4 @@ import Foundation
 
 typealias StaticCellProtocol = NibLoadable & HeightContainable
 typealias itemClosure<T> = ((T) -> Void)
+typealias VoidClosure = (()-> Void)

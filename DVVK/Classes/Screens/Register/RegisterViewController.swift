@@ -12,16 +12,18 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
   
+
+
+    private let models: [HeaderModel] = [.info, .sex, .birthday]
+  
+  private var registerModel = RegisterModel()
+  
   private let datePickerView: UIDatePicker = {
     let picker = UIDatePicker()
     picker.maximumDate = Date()
     
     return picker
   }()
-
-//    private var models:[CellModel] = [ .userInfo]
-    private let models: [HeaderModel] = [.info, .sex, .birthday]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +34,26 @@ class RegisterViewController: UIViewController {
         registerCells()
         delegating()
       configureDatePicker()
+      addRightBarButton()
     }
   
+  private func addRightBarButton() {
+    let barButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonClicked(sender:)))
+    navigationItem.rightBarButtonItem = barButton
+  }
+  @objc private func rightBarButtonClicked(sender: UIBarButtonItem) {
+    guard registerModel.isFilled else {
+      showAlert(with: "Ошибка", and: "Пожалуйста, заполните все поля.")
+      return
+    }
+    
+  }
   private func configureDatePicker() {
     datePickerView.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
   }
   @objc private func datePickerChanged(sender: UIDatePicker){
     let date = sender.date
+    registerModel.birthday = date
     print(date)
   }
     private func delegating() {
@@ -51,6 +66,14 @@ class RegisterViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+  
+  private func photoViewClicked() {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+    
+  }
+  
+  
     private func registerCells() {
 //        InfoUserTableViewCell
         tableView.register(InfoUserTableViewCell.nib, forCellReuseIdentifier: InfoUserTableViewCell.name)
@@ -59,7 +82,13 @@ class RegisterViewController: UIViewController {
       tableView.register(TextFieldTableViewCell.nib, forCellReuseIdentifier: TextFieldTableViewCell.name)
     }
 }
-
+extension RegisterViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let image = info[UIImagePickerController.InfoKey.originalImage] else {
+      return
+    }
+  }
+}
 extension RegisterViewController {
     fileprivate enum CellModel {
         case userInfo
@@ -128,11 +157,14 @@ extension RegisterViewController: UITableViewDataSource {
         default: return 0
         }
     }
+  
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.section].cellModels[indexPath.row]
         switch model {
         case .userInfo:
             if let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.name, for: indexPath) as? InfoUserTableViewCell {
+              cell.photoViewClicked = self.photoViewClicked
                  return cell
             }
         case .sex:
