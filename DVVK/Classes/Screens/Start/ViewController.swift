@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func singInButtonClicked() {
-        
+        StartRouter.shared.goToLoginScreen(from: self)
     }
     @objc private func singUpButtonClicked() {
         StartRouter.shared.goToRegisterScreen(from: self)

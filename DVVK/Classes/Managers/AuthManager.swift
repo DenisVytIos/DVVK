@@ -12,6 +12,7 @@ import FirebaseStorage
 import FirebaseAuth
 
 class AuthManager {
+  var currentUser: User?
   static let shared = AuthManager()
   private init() {}
   
@@ -24,6 +25,21 @@ class AuthManager {
   }
   
   private let auth = Auth.auth()
+  
+  func singIn(with email: String, and password: String, completion: @escaping ItemClosure<AuthResult>) {
+    auth.signIn(withEmail: email, password: password) { (result, error) in
+      if let error = error {
+        completion(AuthResult.error(error.localizedDescription))
+        return
+      }
+      guard let user = result?.user else {
+        completion(AuthResult.error("user not exist"))
+        return
+      }
+      self.currentUser = user
+      completion(AuthResult.success)
+    }
+  }
   
   func register(with model: RegisterModel, completion: @escaping ResultHandler<Void>) {
     guard model.isFilled else {
