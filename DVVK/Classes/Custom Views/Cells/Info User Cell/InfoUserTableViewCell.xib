@@ -81,7 +81,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backgroundFiedsView" destination="tPA-xu-MER" id="Xiu-5n-ai5"/>
+                <outlet property="bottomTextField" destination="Omh-fo-50W" id="leg-Ko-G51"/>
                 <outlet property="photoView" destination="T7c-fE-vzk" id="mXg-CB-lta"/>
+                <outlet property="topTextField" destination="NU4-oH-U5D" id="Cjt-4V-EfG"/>
             </connections>
             <point key="canvasLocation" x="-164" y="144"/>
         </tableViewCell>

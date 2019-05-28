@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARSLineProgress
 
 class RegisterViewController: UIViewController {
     
@@ -15,7 +16,7 @@ class RegisterViewController: UIViewController {
 
 
     private let models: [HeaderModel] = [.info, .sex, .birthday]
-  
+  private let sexModels: [Sex] = [.male, .female]
   private var registerModel = RegisterModel()
   
   private let datePickerView: UIDatePicker = {
@@ -35,18 +36,27 @@ class RegisterViewController: UIViewController {
         delegating()
       configureDatePicker()
       addRightBarButton()
+      updateDoneBottomStatus()
     }
   
   private func addRightBarButton() {
     let barButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonClicked(sender:)))
     navigationItem.rightBarButtonItem = barButton
   }
+  
+  private func updateDoneBottomStatus() {
+    navigationItem.rightBarButtonItem?.isEnabled = registerModel.isFilled
+  }
+  
   @objc private func rightBarButtonClicked(sender: UIBarButtonItem) {
-    guard registerModel.isFilled else {
-      showAlert(with: "Ошибка", and: "Пожалуйста, заполните все поля.")
-      return
+    AuthManager.shared.register(with: registerModel) { result in
+      switch result {
+      case .success(_):
+        self.showAlert(with: "Successfully", and: "Вы зарегистрированы")
+      case .failure(let error):
+        self.showAlert(with: "Ошибка", and: error.localizedDescription)
+      }
     }
-    
   }
   private func configureDatePicker() {
     datePickerView.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
@@ -54,7 +64,7 @@ class RegisterViewController: UIViewController {
   @objc private func datePickerChanged(sender: UIDatePicker){
     let date = sender.date
     registerModel.birthday = date
-    print(date)
+    updateDoneBottomStatus()
   }
     private func delegating() {
         tableView.delegate   = self
@@ -70,6 +80,8 @@ class RegisterViewController: UIViewController {
   private func photoViewClicked() {
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
+    imagePickerController.sourceType = .photoLibrary
+    present(imagePickerController, animated: true, completion: nil)
     
   }
   
@@ -84,8 +96,17 @@ class RegisterViewController: UIViewController {
 }
 extension RegisterViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    guard let image = info[UIImagePickerController.InfoKey.originalImage] else {
+    picker.dismiss(animated: true, completion: nil)
+    guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
       return
+    }
+    self.registerModel.photo = image
+    updateDoneBottomStatus()
+    tableView.reloadData()
+    
+    ARSLineProgress.show()
+    StorageManager.shared.upload(photo: image, by: registerModel) {
+      ARSLineProgress.hide()
     }
   }
 }
@@ -164,15 +185,29 @@ extension RegisterViewController: UITableViewDataSource {
         switch model {
         case .userInfo:
             if let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.name, for: indexPath) as? InfoUserTableViewCell {
+              cell.topTextChanged = {
+                text in
+                self.registerModel.email = text
+                self.updateDoneBottomStatus()
+              }
+              cell.bottomTextChanged = {
+                text in
+                self.registerModel.password = text
+                self.updateDoneBottomStatus()
+              }
               cell.photoViewClicked = self.photoViewClicked
+              cell.set(image: registerModel.photo)
                  return cell
             }
         case .sex:
           if let cell = tableView.dequeueReusableCell(withIdentifier: SegmenterTableViewCell.name, for: indexPath) as? SegmenterTableViewCell{
+            cell.set(titles: sexModels.map({ $0.rawValue.capitalized } ))
             cell.indexChanged = {
               index in
               
-              print(index)
+              let sex = self.sexModels[index]
+              self.registerModel.sex = sex
+              self.updateDoneBottomStatus()
             }
               return cell
           }

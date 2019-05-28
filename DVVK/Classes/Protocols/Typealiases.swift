@@ -8,6 +8,8 @@
 
 import Foundation
 
-typealias StaticCellProtocol = NibLoadable & HeightContainable
-typealias itemClosure<T> = ((T) -> Void)
-typealias VoidClosure = (()-> Void)
+typealias StaticCellProtocol     = NibLoadable & HeightContainable
+typealias ItemClosure<T>         = ((T) -> Void)
+typealias OptionalItemClosure<T> = ((T?) -> Void)
+typealias VoidClosure            = (()-> Void)
+typealias ResultHandler<Value>   = (Result<Value>) -> Void
