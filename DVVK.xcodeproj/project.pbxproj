@@ -25,6 +25,10 @@
 		9295BB2B229D60F200050C91 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9295BB29229D60F200050C91 /* LoginViewController.xib */; };
 		9295BB2E229D651500050C91 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295BB2D229D651500050C91 /* TextField.swift */; };
 		929BD5922297D3F0003B6B62 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BD5912297D3F0003B6B62 /* AuthManager.swift */; };
+		92A4577E229D923F00D1C47D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4577C229D923F00D1C47D /* FeedViewController.swift */; };
+		92A4577F229D923F00D1C47D /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A4577D229D923F00D1C47D /* FeedViewController.xib */; };
+		92A45782229D940F00D1C47D /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A45781229D940F00D1C47D /* UserHeaderView.xib */; };
+		92A45784229D96A400D1C47D /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A45783229D96A400D1C47D /* UserHeaderView.swift */; };
 		92A8F884229C0DF100860804 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8F883229C0DF100860804 /* CustomError.swift */; };
 		92A8F886229C0E4E00860804 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8F885229C0E4E00860804 /* CustomErrors.swift */; };
 		92A8F888229C141700860804 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8F887229C141700860804 /* Validator.swift */; };
@@ -82,6 +86,10 @@
 		9295BB29229D60F200050C91 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9295BB2D229D651500050C91 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		929BD5912297D3F0003B6B62 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		92A4577C229D923F00D1C47D /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		92A4577D229D923F00D1C47D /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		92A45781229D940F00D1C47D /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
+		92A45783229D96A400D1C47D /* UserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		92A8F883229C0DF100860804 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		92A8F885229C0E4E00860804 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		92A8F887229C141700860804 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -240,6 +248,24 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		92A4577B229D914E00D1C47D /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				92A4577C229D923F00D1C47D /* FeedViewController.swift */,
+				92A4577D229D923F00D1C47D /* FeedViewController.xib */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		92A45780229D937300D1C47D /* User Header */ = {
+			isa = PBXGroup;
+			children = (
+				92A45781229D940F00D1C47D /* UserHeaderView.xib */,
+				92A45783229D96A400D1C47D /* UserHeaderView.swift */,
+			);
+			path = "User Header";
+			sourceTree = "<group>";
+		};
 		92C98888227C8CA800E8BD7F = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +343,7 @@
 		92CC0C23227D481E000D0B17 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				92A4577B229D914E00D1C47D /* Feed */,
 				9295BB27229D609000050C91 /* Login */,
 				92D9B327227DD16F00A76933 /* Register */,
 				92CC0C1F227D47AE000D0B17 /* Start */,
@@ -345,6 +372,7 @@
 		92D9B32C227DD27900A76933 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				92A45780229D937300D1C47D /* User Header */,
 				9295BB2C229D63E900050C91 /* TextFieds */,
 				9271393A228BFA8300CC441B /* Header Title View */,
 				926C2E132281D998001FC1D2 /* Cells */,
@@ -480,12 +508,14 @@
 				926C2E192281DB07001FC1D2 /* InfoUserTableViewCell.xib in Resources */,
 				9295BB2B229D60F200050C91 /* LoginViewController.xib in Resources */,
 				9271393E228BFB3E00CC441B /* HeaderTitleView.xib in Resources */,
+				92A45782229D940F00D1C47D /* UserHeaderView.xib in Resources */,
 				92C9889F227C8CAA00E8BD7F /* LaunchScreen.storyboard in Resources */,
 				92C988B5227C8E7B00E8BD7F /* ViewController.xib in Resources */,
 				92C9889C227C8CAA00E8BD7F /* Assets.xcassets in Resources */,
 				925D7550228D337300ABD650 /* TextTableViewCell.xib in Resources */,
 				925D7555228D465F00ABD650 /* TextFieldTableViewCell.xib in Resources */,
 				92D9B32B227DD1B100A76933 /* RegisterViewController.xib in Resources */,
+				92A4577F229D923F00D1C47D /* FeedViewController.xib in Resources */,
 				92B738A82282D5F70093F73C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,6 +592,7 @@
 				9295BB2A229D60F200050C91 /* LoginViewController.swift in Sources */,
 				92A8F884229C0DF100860804 /* CustomError.swift in Sources */,
 				925D754F228D337300ABD650 /* TextTableViewCell.swift in Sources */,
+				92A45784229D96A400D1C47D /* UserHeaderView.swift in Sources */,
 				9295BB24229D596400050C91 /* AuthResult.swift in Sources */,
 				929BD5922297D3F0003B6B62 /* AuthManager.swift in Sources */,
 				926C2E122281C9E9001FC1D2 /* Extensions+NSLayoutConstraint.swift in Sources */,
@@ -581,6 +612,7 @@
 				92713940228BFF5300CC441B /* CellHeaderProtocol.swift in Sources */,
 				92E76A022282A6D700439ABD /* Typealiases.swift in Sources */,
 				92FA0E362292967F00AF78BE /* Sex.swift in Sources */,
+				92A4577E229D923F00D1C47D /* FeedViewController.swift in Sources */,
 				9295BB2E229D651500050C91 /* TextField.swift in Sources */,
 				92D9B32F227DD3EE00A76933 /* PhotoView.swift in Sources */,
 				92C98895227C8CA800E8BD7F /* AppDelegate.swift in Sources */,
