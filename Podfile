@@ -11,5 +11,7 @@ use_frameworks!
  pod 'Firebase/Storage' 
  pod 'Firebase/Auth' 
  pod 'ARSLineProgress'
+ pod 'Locksmith'
+  
 
 end

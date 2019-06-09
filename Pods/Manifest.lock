@@ -71,6 +71,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - leveldb-library (1.20)
+  - Locksmith (4.0.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -83,6 +84,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - Locksmith
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -99,6 +101,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - Locksmith
     - nanopb
 
 SPEC CHECKSUMS:
@@ -115,8 +118,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: f1faafc033ea203adf1783ce00af455bb99d0e5b
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 35f48c60126ea36a908f6e31833faecc3b892080
+PODFILE CHECKSUM: 46296b541dfc249fd6037d0a6c263a8f236b65c6
 
 COCOAPODS: 1.6.1

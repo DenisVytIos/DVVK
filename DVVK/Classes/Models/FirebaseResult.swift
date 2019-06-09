@@ -1,5 +1,5 @@
 //
-//  AuthResult.swift
+//  FirebaseResult.swift
 //  DVVK
 //
 //  Created by Denis on 5/28/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AuthResult {
+enum FirebaseResult {
   case success
   case error(String)
 }

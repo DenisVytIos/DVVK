@@ -11,33 +11,40 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 
-class AuthManager {
+class AuthManager: FirebaseManager {
   var currentUser: User?
   static let shared = AuthManager()
-  private init() {}
-  
-  private var sourseRef: DatabaseReference {
-    return Database.database().reference()
-  }
-  
-  private var usersRef: DatabaseReference {
-    return sourseRef.child("users")
-  }
-  
+
   private let auth = Auth.auth()
   
-  func singIn(with email: String, and password: String, completion: @escaping ItemClosure<AuthResult>) {
-    auth.signIn(withEmail: email, password: password) { (result, error) in
+  func sighInIfNeeded(completion:  ItemClosure<FirebaseResult>? = nil) {
+    let credentials = SecureStorageManager.shared.loadEmailAndPassword()
+    
+    guard let email = credentials.email, let password = credentials.password else {
+      return
+    }
+    singIn(with: email, and: password, completion: completion ?? {_ in})
+  }
+  
+  func singIn(with email: String?, and password: String?, completion: @escaping ItemClosure<FirebaseResult>) {
+    guard let email = email, let password = password else {
+      completion(FirebaseResult.error("Something wrong with email or password.Please try again"))
+      return
+    }
+
+    auth.signIn(withEmail: email, password: password)  { (result, error) in
+      
       if let error = error {
-        completion(AuthResult.error(error.localizedDescription))
+        completion(FirebaseResult.error(error.localizedDescription))
+
         return
       }
       guard let user = result?.user else {
-        completion(AuthResult.error("user not exist"))
+        completion(FirebaseResult.error("user not exist"))
         return
       }
       self.currentUser = user
-      completion(AuthResult.success)
+      completion(FirebaseResult.success)
     }
   }
   
@@ -51,38 +58,39 @@ class AuthManager {
       return
     }
     
-    guard Validatirs.isSimpleEmail(email) else {
+    guard Validators.isSimpleEmail(email) else {
       completion(.failure(CustomErrors.invalidEmail))
       return
     }
     
     //   let userRef = sourseRef.child("users")
-    let id = model.userId
+   let id = model.userId
     auth.createUser(withEmail: email, password: password) { (result, error) in
-      
-      
       if let error = error {
         completion(.failure(error))
-      }else if let _ = result {
-        //        TODO: use result if need
-        var dict = model.dict
-        dict["id"] = id
-        self.usersRef.child(id).setValue(dict, withCompletionBlock: { (error, reference) in
-          self.addAvatarUrlIfNeeded(for: model)
-          completion(.success(()))
-        })
-      }else {
-        completion(.failure(CustomErrors.unknownError))
+        return
+
       }
+      guard let res = result else {
+        completion(.failure(CustomErrors.unknownError))
+        return
+      }
+      self.currentUser = res.user
       
+      var dict = model.dict
+      dict["id"] = id
+      self.usersRef.child(res.user.uid).setValue(dict, withCompletionBlock: { (error, reference) in
+        self.addAvatarUrlIfNeeded(for: model, user: res.user)
+        completion(.success(()))
+      })
     }
   }
-  func addAvatarUrlIfNeeded(for model: RegisterModel) {
+  func addAvatarUrlIfNeeded(for model: RegisterModel, user: User) {
     StorageManager.shared.loadAvatarUrl(for: model) { (url) in
       guard let url = url else {
         return
       }
-      self.usersRef.child(model.userId).child("avatarUrl").setValue(url.absoluteString)
+      self.usersRef.child(user.uid).child("avatarUrl").setValue(url.absoluteString)
     }
   }
 }
