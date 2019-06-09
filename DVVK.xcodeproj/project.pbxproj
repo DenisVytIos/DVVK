@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9203E48F22A27FCB004D9D6C /* Extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203E48E22A27FCA004D9D6C /* Extension+Encodable.swift */; };
+		9203FEFC22AD3D8C009B8DBF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203FEFA22AD3D8C009B8DBF /* PostTableViewCell.swift */; };
+		9203FEFD22AD3D8C009B8DBF /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9203FEFB22AD3D8C009B8DBF /* PostTableViewCell.xib */; };
 		920F50FC229809D3000DC4E2 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F50FB229809D3000DC4E2 /* Utilites.swift */; };
 		925D754F228D337300ABD650 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D754D228D337300ABD650 /* TextTableViewCell.swift */; };
 		925D7550228D337300ABD650 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925D754E228D337300ABD650 /* TextTableViewCell.xib */; };
@@ -78,6 +80,8 @@
 		29C1ABDC8DC6CF09414108B4 /* Pods-DVVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.debug.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.debug.xcconfig"; sourceTree = "<group>"; };
 		482443A7285DB07BECD66478 /* Pods-DVVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.release.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.release.xcconfig"; sourceTree = "<group>"; };
 		9203E48E22A27FCA004D9D6C /* Extension+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Encodable.swift"; sourceTree = "<group>"; };
+		9203FEFA22AD3D8C009B8DBF /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		9203FEFB22AD3D8C009B8DBF /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		920F50FB229809D3000DC4E2 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		925D754D228D337300ABD650 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		925D754E228D337300ABD650 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
@@ -174,6 +178,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9203FEF922AD3D10009B8DBF /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				9203FEFA22AD3D8C009B8DBF /* PostTableViewCell.swift */,
+				9203FEFB22AD3D8C009B8DBF /* PostTableViewCell.xib */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		920F50FA22980983000DC4E2 /* Help files */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +238,7 @@
 		926C2E132281D998001FC1D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9203FEF922AD3D10009B8DBF /* Post */,
 				925D7551228D457300ABD650 /*  Text Field Cell */,
 				925D754C228D32FD00ABD650 /* Text Cell */,
 				92E7B2B8228C793B005F1A0D /* Segmenter Cell */,
@@ -545,6 +559,7 @@
 				9271393E228BFB3E00CC441B /* HeaderTitleView.xib in Resources */,
 				92A45782229D940F00D1C47D /* UserHeaderView.xib in Resources */,
 				92C9889F227C8CAA00E8BD7F /* LaunchScreen.storyboard in Resources */,
+				9203FEFD22AD3D8C009B8DBF /* PostTableViewCell.xib in Resources */,
 				9290A4C222A237C80024D8A8 /* CreatePostViewController.xib in Resources */,
 				92C988B5227C8E7B00E8BD7F /* ViewController.xib in Resources */,
 				92C9889C227C8CAA00E8BD7F /* Assets.xcassets in Resources */,
@@ -654,6 +669,7 @@
 				92E76A002282A5B600439ABD /* HeightContainable.swift in Sources */,
 				92FA0E3822929C1A00AF78BE /* Extensions+UIViewController.swift in Sources */,
 				92713940228BFF5300CC441B /* CellHeaderProtocol.swift in Sources */,
+				9203FEFC22AD3D8C009B8DBF /* PostTableViewCell.swift in Sources */,
 				92E76A022282A6D700439ABD /* Typealiases.swift in Sources */,
 				92FA0E362292967F00AF78BE /* Sex.swift in Sources */,
 				92DEF1D422A4EFE9009E030B /* TouchIDAuth.swift in Sources */,
