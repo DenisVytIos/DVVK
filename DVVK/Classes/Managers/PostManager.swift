@@ -10,34 +10,42 @@ import Foundation
 import Firebase
 
 final class PostManager: FirebaseManager {
-  enum Result {
-    case success([Post])
-    case error(String)
-    
-  }
+
   private override init() {}
   
   static let shared = PostManager()
   
-  func createPost(from user: User, with text: String, completion: @escaping ItemClosure<FirebaseResult>){
-    let postID = UUID().uuidString
-    let post = Post(text: text)
+  func createPost(from user: User, with model: CreatePostModel, completion: @escaping ItemClosure<CreatedPostResult>){
+    guard model.isFilled else {
+      completion(.error("Can't create empty post"))
+      return
+    }
+    createPost(from: user, with: model.text, image: model.image, completion: completion)
+  }
+  
+  func createPost(from user: User, with text: String? = nil, image: UIImage? = nil, completion: @escaping ItemClosure<CreatedPostResult>){
+    if let text = text, text.isEmpty, image == nil {
+      completion(.error("Can't create empty post"))
+      return
+    }
+    
+    let post = Post(text: text, imageData: image?.jpegData(compressionQuality: 0.5))
     
     guard let dictionary = post.dictionary else {
       completion(.error("Post model not dictionary"))
       return
     }
-    usersRef.child(user.uid).child(Keys.posts.rawValue).child(postID).setValue(dictionary) { (error, reference) in
+    usersRef.child(user.uid).child(Keys.posts.rawValue).child(post.id).setValue(dictionary) { (error, reference) in
       if let error = error?.localizedDescription{
         completion(.error(error))
         return
       }
-      
-      completion(.success)
+      completion(.success(post))
+
     }
   }
   
-  func loadingAllPosts(completion: @escaping ItemClosure<Result>) {
+  func loadingAllPosts(completion: @escaping ItemClosure<LoadedPostResult>) {
     usersRef.observe(.value) { (snapshot) in
       var result:[Post] = []
       guard let value = snapshot.value as? [String: [AnyHashable: Any]] else {
@@ -52,7 +60,9 @@ final class PostManager: FirebaseManager {
           result.append(contentsOf: posts)
         }
       })
-  
+      result.sort(by: { (post1, post2) -> Bool in
+        return post1.dateUnix > post2.dateUnix
+      })
       completion(.success(result))
     }
   }
@@ -62,5 +72,15 @@ final class PostManager: FirebaseManager {
       case posts
     }
     
+    
+    enum LoadedPostResult {
+      case success([Post])
+      case error(String)
+    }
+    
+    enum CreatedPostResult {
+      case success(Post)
+      case error(String)
+    }
   }
 

@@ -12,6 +12,7 @@ class FeedViewController: UIViewController {
 
   
   @IBOutlet weak var tableView: UITableView!
+  
   private var posts: [Post] = [] {
     didSet {
       tableView.reloadData()
@@ -46,14 +47,14 @@ class FeedViewController: UIViewController {
       return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 44
+      return 350
     }
   }
   extension FeedViewController: UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.name, for: indexPath) as! PostTableViewCell
-      cell.textView.text = posts[indexPath.row].text
+      cell.setup(with: posts[indexPath.row])
       return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

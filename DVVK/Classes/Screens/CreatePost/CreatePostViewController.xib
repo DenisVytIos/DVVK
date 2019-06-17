@@ -13,8 +13,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePostViewController" customModule="DVVK" customModuleProvider="target">
             <connections>
-                <outlet property="doneButton" destination="NNb-8n-1oD" id="UyC-9Z-pKI"/>
-                <outlet property="textView" destination="VYu-ho-ZER" id="rox-pf-hiM"/>
+                <outlet property="crossImageView" destination="Lp1-85-gRd" id="l21-vL-JxX"/>
+                <outlet property="doneButton" destination="NNb-8n-1oD" id="uLn-C5-6dB"/>
+                <outlet property="postImageView" destination="zd5-Nf-gLX" id="dkM-kw-64f"/>
+                <outlet property="textView" destination="z5H-AF-t9r" id="288-7s-3NW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,15 +25,28 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VYu-ho-ZER">
-                    <rect key="frame" x="0.0" y="60" width="414" height="166.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add image post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hr-Pk-8BO">
+                    <rect key="frame" x="122" y="376" width="170" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="Lp1-85-gRd">
+                    <rect key="frame" x="16" y="44" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="AsA-rk-lhi"/>
+                        <constraint firstAttribute="height" constant="32" id="Ogy-MS-mwo"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="student" translatesAutoresizingMaskIntoConstraints="NO" id="zd5-Nf-gLX">
+                    <rect key="frame" x="16" y="76" width="382" height="300"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="sRg-3G-4dc"/>
+                    </constraints>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNb-8n-1oD">
-                    <rect key="frame" x="330" y="234.5" width="68" height="44"/>
+                    <rect key="frame" x="330" y="454" width="68" height="44"/>
                     <color key="backgroundColor" name="blueColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="68" id="Rei-JM-Y1n"/>
@@ -41,21 +56,37 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Done"/>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z5H-AF-t9r" customClass="TextView" customModule="DVVK" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="413" width="414" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NNb-8n-1oD" secondAttribute="bottom" constant="16" id="0dh-3X-8Kh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VYu-ho-ZER" secondAttribute="trailing" id="9Kd-ns-HJl"/>
-                <constraint firstItem="NNb-8n-1oD" firstAttribute="top" secondItem="VYu-ho-ZER" secondAttribute="bottom" constant="8" id="9Zd-Fz-Rk5"/>
-                <constraint firstItem="VYu-ho-ZER" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BDZ-9O-6WO"/>
-                <constraint firstItem="VYu-ho-ZER" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="DUT-7s-zb3"/>
+                <constraint firstItem="Lp1-85-gRd" firstAttribute="leading" secondItem="zd5-Nf-gLX" secondAttribute="leading" id="1DV-Ej-MrD"/>
+                <constraint firstItem="z5H-AF-t9r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="94n-0E-zT7"/>
+                <constraint firstItem="8Hr-Pk-8BO" firstAttribute="top" secondItem="zd5-Nf-gLX" secondAttribute="bottom" id="DNn-Fw-AwW"/>
+                <constraint firstItem="zd5-Nf-gLX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="EhP-Ny-kBS"/>
+                <constraint firstItem="z5H-AF-t9r" firstAttribute="top" secondItem="8Hr-Pk-8BO" secondAttribute="bottom" constant="16" id="GwS-j6-4AH"/>
+                <constraint firstItem="8Hr-Pk-8BO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LZi-7t-N0U"/>
+                <constraint firstItem="NNb-8n-1oD" firstAttribute="top" secondItem="z5H-AF-t9r" secondAttribute="bottom" constant="8" id="VjF-Dn-rRO"/>
+                <constraint firstItem="zd5-Nf-gLX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ezO-nE-OTs"/>
+                <constraint firstItem="Lp1-85-gRd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="h94-st-eoG"/>
+                <constraint firstItem="z5H-AF-t9r" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="k2e-13-G0N"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NNb-8n-1oD" secondAttribute="trailing" constant="16" id="kC1-uo-n09"/>
                 <constraint firstItem="NNb-8n-1oD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="lHd-sz-Q7R"/>
+                <constraint firstItem="zd5-Nf-gLX" firstAttribute="top" secondItem="Lp1-85-gRd" secondAttribute="bottom" id="thF-Ci-qpu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-100.00000000000001" y="113.83928571428571"/>
         </view>
     </objects>
     <resources>
+        <image name="cross" width="32" height="32"/>
+        <image name="student" width="512" height="512"/>
         <namedColor name="blueColor">
             <color red="0.29803921568627451" green="0.45882352941176469" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
