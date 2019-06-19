@@ -60,6 +60,10 @@
 		92E76A022282A6D700439ABD /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E76A012282A6D700439ABD /* Typealiases.swift */; };
 		92E7B2BB228C7AC5005F1A0D /* SegmenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7B2B9228C7AC5005F1A0D /* SegmenterTableViewCell.swift */; };
 		92E7B2BC228C7AC5005F1A0D /* SegmenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E7B2BA228C7AC5005F1A0D /* SegmenterTableViewCell.xib */; };
+		92F5218022BA0F0D002B496E /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5217E22BA0F0D002B496E /* ChatsViewController.swift */; };
+		92F5218122BA0F0D002B496E /* ChatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92F5217F22BA0F0D002B496E /* ChatsViewController.xib */; };
+		92F5218322BA118F002B496E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5218222BA118F002B496E /* UserManager.swift */; };
+		92F5218522BA1326002B496E /* DVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5218422BA1326002B496E /* DVUser.swift */; };
 		92F7608C22A25F640034A83F /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F7608B22A25F640034A83F /* FirebaseManager.swift */; };
 		92F7608E22A265410034A83F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F7608D22A265410034A83F /* Post.swift */; };
 		92F8D29422B2372500B0E103 /* Extensions+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8D29322B2372500B0E103 /* Extensions+UITextView.swift */; };
@@ -139,6 +143,10 @@
 		92E76A012282A6D700439ABD /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		92E7B2B9228C7AC5005F1A0D /* SegmenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmenterTableViewCell.swift; sourceTree = "<group>"; };
 		92E7B2BA228C7AC5005F1A0D /* SegmenterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmenterTableViewCell.xib; sourceTree = "<group>"; };
+		92F5217E22BA0F0D002B496E /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		92F5217F22BA0F0D002B496E /* ChatsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsViewController.xib; sourceTree = "<group>"; };
+		92F5218222BA118F002B496E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		92F5218422BA1326002B496E /* DVUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVUser.swift; sourceTree = "<group>"; };
 		92F7608B22A25F640034A83F /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		92F7608D22A265410034A83F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		92F8D29322B2372500B0E103 /* Extensions+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UITextView.swift"; sourceTree = "<group>"; };
@@ -307,6 +315,7 @@
 				92E23F9A22A2A4D600116A8B /* SecureStorageManager.swift */,
 				92DEF1D322A4EFE9009E030B /* TouchIDAuth.swift */,
 				92DEF1D522A4F0E7009E030B /* BiometricAuthManager.swift */,
+				92F5218222BA118F002B496E /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -406,6 +415,7 @@
 		92CC0C23227D481E000D0B17 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				92F5217B22BA0E89002B496E /* Chats */,
 				9290A4BE22A2378D0024D8A8 /* CreatePost */,
 				92A4577B229D914E00D1C47D /* Feed */,
 				9295BB27229D609000050C91 /* Login */,
@@ -474,6 +484,7 @@
 				92F7608D22A265410034A83F /* Post.swift */,
 				92C7489122A7C19C00FDB518 /* CustomErrors.swift */,
 				922DAC5622B4EFCE00E0BDAA /* CreatePostModel.swift */,
+				92F5218422BA1326002B496E /* DVUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -485,6 +496,15 @@
 				92E7B2BA228C7AC5005F1A0D /* SegmenterTableViewCell.xib */,
 			);
 			path = "Segmenter Cell";
+			sourceTree = "<group>";
+		};
+		92F5217B22BA0E89002B496E /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				92F5217E22BA0F0D002B496E /* ChatsViewController.swift */,
+				92F5217F22BA0F0D002B496E /* ChatsViewController.xib */,
+			);
+			path = Chats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,6 +600,7 @@
 				9290A4C222A237C80024D8A8 /* CreatePostViewController.xib in Resources */,
 				92C988B5227C8E7B00E8BD7F /* ViewController.xib in Resources */,
 				92C9889C227C8CAA00E8BD7F /* Assets.xcassets in Resources */,
+				92F5218122BA0F0D002B496E /* ChatsViewController.xib in Resources */,
 				925D7550228D337300ABD650 /* TextTableViewCell.xib in Resources */,
 				925D7555228D465F00ABD650 /* TextFieldTableViewCell.xib in Resources */,
 				92D9B32B227DD1B100A76933 /* RegisterViewController.xib in Resources */,
@@ -665,6 +686,7 @@
 				9295BB24229D596400050C91 /* FirebaseResult.swift in Sources */,
 				929BD5922297D3F0003B6B62 /* AuthManager.swift in Sources */,
 				926C2E122281C9E9001FC1D2 /* Extensions+NSLayoutConstraint.swift in Sources */,
+				92F5218022BA0F0D002B496E /* ChatsViewController.swift in Sources */,
 				92C98897227C8CA800E8BD7F /* ViewController.swift in Sources */,
 				9290A4C422A23B070024D8A8 /* PostManager.swift in Sources */,
 				920F50FC229809D3000DC4E2 /* Utilites.swift in Sources */,
@@ -676,6 +698,7 @@
 				926C2E182281DB07001FC1D2 /* InfoUserTableViewCell.swift in Sources */,
 				92FA0E342292949B00AF78BE /* RegisterModel.swift in Sources */,
 				92F7608C22A25F640034A83F /* FirebaseManager.swift in Sources */,
+				92F5218322BA118F002B496E /* UserManager.swift in Sources */,
 				92DEF1D622A4F0E7009E030B /* BiometricAuthManager.swift in Sources */,
 				9203E48F22A27FCB004D9D6C /* Extension+Encodable.swift in Sources */,
 				92C7489022A7ADAC00FDB518 /* Extension+Decodable.swift in Sources */,
@@ -685,6 +708,7 @@
 				92F7608E22A265410034A83F /* Post.swift in Sources */,
 				92CC0C26227D4949000D0B17 /* Router.swift in Sources */,
 				9290A4C122A237C80024D8A8 /* CreatePostViewController.swift in Sources */,
+				92F5218522BA1326002B496E /* DVUser.swift in Sources */,
 				92E76A002282A5B600439ABD /* HeightContainable.swift in Sources */,
 				92FA0E3822929C1A00AF78BE /* Extensions+UIViewController.swift in Sources */,
 				92713940228BFF5300CC441B /* CellHeaderProtocol.swift in Sources */,

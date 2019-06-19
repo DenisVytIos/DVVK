@@ -26,6 +26,7 @@ class BiometricAuthManager {
   func isBiometricAuthSupported() -> Bool {
     return context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
   }
+  
   func biometricType() -> BiometricType {
     let _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     switch context.biometryType {
@@ -39,14 +40,23 @@ class BiometricAuthManager {
       fatalError()
     }
   }
-  func authenticateUser(completion: @escaping ItemClosure<CustomErrors?>){
+  
+//  func authenticateUser(completion: @escaping ItemClosure<CustomErrors?>){
+//
+//    guard isBiometricAuthSupported() else {
+//      completion(CustomErrors.biometricAuthError("Biometric auth isn't available"))
+//      return
+//    }
+  
+  func authenticateUser(completion: @escaping ItemClosure<CustomErrors?>) {
     
     guard isBiometricAuthSupported() else {
       completion(CustomErrors.biometricAuthError("Biometric auth isn't available"))
       return
     }
     
-    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: loginReason) { (success, evaluateError) in
+    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: loginReason)
+    { (success, evaluateError) in
       
       onMain {
         
@@ -56,25 +66,25 @@ class BiometricAuthManager {
           
           switch evaluateError {
           case LAError.authenticationFailed?:
-            message = "There was a problem verifying your identuty."
+            message = "There was a problem verifying your identity."
           case LAError.userCancel?:
             message = "You pressed cancel."
           case LAError.userFallback?:
             message = "You pressed password."
           case LAError.biometryNotAvailable?:
-            message = "Face/Touch ID is not available."
+            message = "Face ID/Touch ID is not available."
           case LAError.biometryNotEnrolled?:
-            message = "Face/Touch ID is not set up."
+            message = "Face ID/Touch ID is not set up."
           case LAError.biometryLockout?:
-            message = "Face/Touch ID is locked."
+            message = "Face ID/Touch ID is locked."
           default:
-            message = "Face/Touch ID may not be configured."
-      
+            message = "Face ID/Touch ID may not be configured"
           }
           
           completion(CustomErrors.biometricAuthError(message))
-         return
+          return
         }
+        
         completion(nil)
       }
     }

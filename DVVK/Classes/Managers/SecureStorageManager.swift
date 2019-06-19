@@ -57,6 +57,7 @@ final class SecureStorageManager {
     return credentials.email != nil && credentials.password != nil
   }
 }
+
 private extension SecureStorageManager {
   enum Keys: String {
     case email

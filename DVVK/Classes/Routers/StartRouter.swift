@@ -9,6 +9,9 @@
 import UIKit
 
 final class StartRouter {
+  
+    private weak var mainRouter: Router?
+  
     static let shared = StartRouter()
     
     private init() {}
@@ -26,4 +29,5 @@ final class StartRouter {
     let vc = Router.shared.startControllerAfterAuth
     source.present(vc, animated: true, completion: nil)
   }
+  
 }

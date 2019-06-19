@@ -16,7 +16,7 @@ class AuthManager: FirebaseManager {
   static let shared = AuthManager()
 
   private let auth = Auth.auth()
-  
+//  FirebaseResult
   func sighInIfNeeded(completion:  ItemClosure<FirebaseResult>? = nil) {
     let credentials = SecureStorageManager.shared.loadEmailAndPassword()
     
@@ -85,6 +85,7 @@ class AuthManager: FirebaseManager {
       })
     }
   }
+  
   func addAvatarUrlIfNeeded(for model: RegisterModel, user: User) {
     StorageManager.shared.loadAvatarUrl(for: model) { (url) in
       guard let url = url else {

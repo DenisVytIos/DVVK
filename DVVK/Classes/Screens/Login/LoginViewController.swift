@@ -73,10 +73,11 @@ private extension LoginViewController {
   }
   
   func performLogin(email: String?, password: String?) {
+    
     AuthManager.shared.singIn(with: email, and: password) { (result) in
       switch result {
-      case .success:
-        StartRouter.shared.routeAfterSuccessAuth(from: self)
+      case .success: 
+       StartRouter.shared.routeAfterSuccessAuth(from: self)
       case .error(let error):
         self.showAlert(with: "Ошибка", and: error)
       }

@@ -24,10 +24,16 @@ final class Router{
     }
   
   var startControllerAfterAuth: UIViewController {
+    
     let createPostVC = CreatePostViewController()
     let createPostNC = UINavigationController(rootViewController: createPostVC)
     let createPostTabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
     createPostNC.tabBarItem = createPostTabBarItem
+    
+    let chatsVC = ChatsViewController()
+    let chatsNC = UINavigationController.init(rootViewController: chatsVC)
+    let chatsTabbarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+    chatsNC.tabBarItem = chatsTabbarItem
     
     let feedVC = FeedViewController()
     let feedNC = UINavigationController(rootViewController: feedVC)
@@ -36,7 +42,7 @@ final class Router{
     feedNC.tabBarItem = feedTabBarItem
     
     let tabBarVC = UITabBarController()
-    tabBarVC.setViewControllers([feedNC, createPostNC], animated: true)
+    tabBarVC.setViewControllers([feedNC, chatsNC, createPostNC], animated: true)
     return tabBarVC
   }
 }

@@ -25,6 +25,7 @@ class StorageManager {
       closure?()
     }
   }
+  
   func loadAvatarUrl(for model: RegisterModel, closure: @escaping OptionalItemClosure<URL>) {
     sourceRef.child(Keys.avatars.rawValue).child(model.userId).downloadURL { (url, error) in
       closure(url)
