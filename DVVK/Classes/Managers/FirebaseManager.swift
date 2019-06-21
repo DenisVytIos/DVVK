@@ -17,4 +17,7 @@ class FirebaseManager {
    var usersRef: DatabaseReference {
     return sourseRef.child("users")
   }
+  var chatsRef: DatabaseReference {
+    return sourseRef.child("chats")
+  }
 }

@@ -13,4 +13,7 @@ class DVUser: Codable {
   var birthday: TimeInterval?
   var email: String?
   var sex: String?
+  
+  
 }
+

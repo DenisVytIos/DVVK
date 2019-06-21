@@ -18,10 +18,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     Router.shared.root(&window)
     FirebaseApp.configure()
-    AuthManager.shared.sighInIfNeeded()
+    AuthManager.shared.sighInIfNeeded { _ in
+      UserManager.shared.fetchCurrentUser()
+    }
+    /////////////////////////////////////////
+//    AuthManager.shared.sighInIfNeeded { _ in
+//      UserManager.shared.fetchCurrentUser {
+//        UserManager.shared.loadingUsers { users in
+//          let chat = Chat (id: "NEWCHAT", users: [users.first!, UserManager.shared.currentUser!])
+//          ChatManager.shared.startChat(chat: chat, callback: {
+//
+//          })
+//        }
+//      }
+    
+     
+   
+ 
+    
+//////////////////////////////
+//    let chat = Chat(id: "123")
+//    ChatManager.shared.loadingMessages(chat: chat) { (messages) in
+//      print(messages)
+//    }
+//
+  //////////////////////////////////
+//    let message = Message()
+//    message.senderId = "123"
+//    message.text = "text"
+//    message.time = Date().timeIntervalSince1970
+//    let chat = Chat(id: "123")
+//    ChatManager.shared.send(message: message, on: chat)
+    
 //SecureStorageManager.shared.eraseUserDataIfNeeded()
     return true
   }
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

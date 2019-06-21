@@ -16,7 +16,7 @@
                 <outlet property="crossImageView" destination="Lp1-85-gRd" id="l21-vL-JxX"/>
                 <outlet property="doneButton" destination="NNb-8n-1oD" id="uLn-C5-6dB"/>
                 <outlet property="postImageView" destination="zd5-Nf-gLX" id="dkM-kw-64f"/>
-                <outlet property="textView" destination="z5H-AF-t9r" id="288-7s-3NW"/>
+                <outlet property="textView" destination="z5H-AF-t9r" id="Zvs-jM-3Mz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -81,7 +81,7 @@
                 <constraint firstItem="zd5-Nf-gLX" firstAttribute="top" secondItem="Lp1-85-gRd" secondAttribute="bottom" id="thF-Ci-qpu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-100.00000000000001" y="113.83928571428571"/>
+            <point key="canvasLocation" x="-1188" y="-17"/>
         </view>
     </objects>
     <resources>
