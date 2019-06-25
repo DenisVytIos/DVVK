@@ -13,6 +13,7 @@ class Chat: Codable {
   var messages: [Message] = []
   var users: [DVUser] = []
   
+//for first chat
   init(id: String, users: [DVUser]) {
     self.id = id
     self.users = users

@@ -27,6 +27,9 @@
 		9276A56922BB92AF00A5BDC6 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276A56822BB92AF00A5BDC6 /* ChatController.swift */; };
 		9276A56B22BB953200A5BDC6 /* Lifecycable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276A56A22BB953200A5BDC6 /* Lifecycable.swift */; };
 		9276A56D22BBA5C300A5BDC6 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276A56C22BBA5C300A5BDC6 /* Chat.swift */; };
+		928B525D22BEBA1F00754198 /* TextMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B525C22BEBA1F00754198 /* TextMessageTableViewCell.swift */; };
+		928B525F22BEBACC00754198 /* MyTextMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928B525E22BEBACC00754198 /* MyTextMessageTableViewCell.xib */; };
+		928B526322BEBF2500754198 /* OponentTextMessageTableViewCell..xib in Resources */ = {isa = PBXBuildFile; fileRef = 928B526222BEBF2500754198 /* OponentTextMessageTableViewCell..xib */; };
 		9290A4C122A237C80024D8A8 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290A4BF22A237C80024D8A8 /* CreatePostViewController.swift */; };
 		9290A4C222A237C80024D8A8 /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9290A4C022A237C80024D8A8 /* CreatePostViewController.xib */; };
 		9290A4C422A23B070024D8A8 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290A4C322A23B070024D8A8 /* PostManager.swift */; };
@@ -114,6 +117,9 @@
 		9276A56822BB92AF00A5BDC6 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		9276A56A22BB953200A5BDC6 /* Lifecycable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifecycable.swift; sourceTree = "<group>"; };
 		9276A56C22BBA5C300A5BDC6 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		928B525C22BEBA1F00754198 /* TextMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageTableViewCell.swift; sourceTree = "<group>"; };
+		928B525E22BEBACC00754198 /* MyTextMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTextMessageTableViewCell.xib; sourceTree = "<group>"; };
+		928B526222BEBF2500754198 /* OponentTextMessageTableViewCell..xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OponentTextMessageTableViewCell..xib; sourceTree = "<group>"; };
 		9290A4BF22A237C80024D8A8 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		9290A4C022A237C80024D8A8 /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
 		9290A4C322A23B070024D8A8 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
@@ -261,6 +267,13 @@
 			path = " Text Field Cell";
 			sourceTree = "<group>";
 		};
+		9269D3C322BF77A200C5C3C1 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		926C2E0E2281C64A001FC1D2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +290,7 @@
 		926C2E132281D998001FC1D2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				928B525B22BEB9BE00754198 /* Chat */,
 				9203FEF922AD3D10009B8DBF /* Post */,
 				925D7551228D457300ABD650 /*  Text Field Cell */,
 				925D754C228D32FD00ABD650 /* Text Cell */,
@@ -293,6 +307,16 @@
 				9271393D228BFB3E00CC441B /* HeaderTitleView.xib */,
 			);
 			path = "Header Title View";
+			sourceTree = "<group>";
+		};
+		928B525B22BEB9BE00754198 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				928B525C22BEBA1F00754198 /* TextMessageTableViewCell.swift */,
+				928B525E22BEBACC00754198 /* MyTextMessageTableViewCell.xib */,
+				928B526222BEBF2500754198 /* OponentTextMessageTableViewCell..xib */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		9290A4BE22A2378D0024D8A8 /* CreatePost */ = {
@@ -432,6 +456,7 @@
 		92CC0C23227D481E000D0B17 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9269D3C322BF77A200C5C3C1 /* Users */,
 				92F5218622BA240E002B496E /* Chat */,
 				92F5217B22BA0E89002B496E /* Chats */,
 				9290A4BE22A2378D0024D8A8 /* CreatePost */,
@@ -622,11 +647,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928B525F22BEBACC00754198 /* MyTextMessageTableViewCell.xib in Resources */,
 				92E7B2BC228C7AC5005F1A0D /* SegmenterTableViewCell.xib in Resources */,
 				926C2E192281DB07001FC1D2 /* InfoUserTableViewCell.xib in Resources */,
 				9295BB2B229D60F200050C91 /* LoginViewController.xib in Resources */,
 				9271393E228BFB3E00CC441B /* HeaderTitleView.xib in Resources */,
 				92A45782229D940F00D1C47D /* UserHeaderView.xib in Resources */,
+				928B526322BEBF2500754198 /* OponentTextMessageTableViewCell..xib in Resources */,
 				92C9889F227C8CAA00E8BD7F /* LaunchScreen.storyboard in Resources */,
 				9203FEFD22AD3D8C009B8DBF /* PostTableViewCell.xib in Resources */,
 				9290A4C222A237C80024D8A8 /* CreatePostViewController.xib in Resources */,
@@ -717,6 +744,7 @@
 				925D754F228D337300ABD650 /* TextTableViewCell.swift in Sources */,
 				92A45784229D96A400D1C47D /* UserHeaderView.swift in Sources */,
 				9295BB24229D596400050C91 /* FirebaseResult.swift in Sources */,
+				928B525D22BEBA1F00754198 /* TextMessageTableViewCell.swift in Sources */,
 				929BD5922297D3F0003B6B62 /* AuthManager.swift in Sources */,
 				926C2E122281C9E9001FC1D2 /* Extensions+NSLayoutConstraint.swift in Sources */,
 				92F5218022BA0F0D002B496E /* ChatsViewController.swift in Sources */,
