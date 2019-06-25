@@ -44,6 +44,8 @@
 		92A45782229D940F00D1C47D /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A45781229D940F00D1C47D /* UserHeaderView.xib */; };
 		92A45784229D96A400D1C47D /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A45783229D96A400D1C47D /* UserHeaderView.swift */; };
 		92A8F888229C141700860804 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8F887229C141700860804 /* Validator.swift */; };
+		92B5D9C022C26B6D0000B538 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B5D9BE22C26B6D0000B538 /* UsersViewController.swift */; };
+		92B5D9C122C26B6D0000B538 /* UsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B5D9BF22C26B6D0000B538 /* UsersViewController.xib */; };
 		92B738A82282D5F70093F73C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92B738A72282D5F70093F73C /* GoogleService-Info.plist */; };
 		92C7489022A7ADAC00FDB518 /* Extension+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C7488F22A7ADAC00FDB518 /* Extension+Decodable.swift */; };
 		92C7489222A7C19C00FDB518 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C7489122A7C19C00FDB518 /* CustomErrors.swift */; };
@@ -134,6 +136,8 @@
 		92A45781229D940F00D1C47D /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
 		92A45783229D96A400D1C47D /* UserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		92A8F887229C141700860804 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		92B5D9BE22C26B6D0000B538 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		92B5D9BF22C26B6D0000B538 /* UsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersViewController.xib; sourceTree = "<group>"; };
 		92B738A72282D5F70093F73C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92C7488F22A7ADAC00FDB518 /* Extension+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Decodable.swift"; sourceTree = "<group>"; };
 		92C7489122A7C19C00FDB518 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
@@ -267,13 +271,6 @@
 			path = " Text Field Cell";
 			sourceTree = "<group>";
 		};
-		9269D3C322BF77A200C5C3C1 /* Users */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Users;
-			sourceTree = "<group>";
-		};
 		926C2E0E2281C64A001FC1D2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +376,15 @@
 			path = "User Header";
 			sourceTree = "<group>";
 		};
+		92B5D9BD22C26B560000B538 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				92B5D9BE22C26B6D0000B538 /* UsersViewController.swift */,
+				92B5D9BF22C26B6D0000B538 /* UsersViewController.xib */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		92C98888227C8CA800E8BD7F = {
 			isa = PBXGroup;
 			children = (
@@ -456,7 +462,7 @@
 		92CC0C23227D481E000D0B17 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				9269D3C322BF77A200C5C3C1 /* Users */,
+				92B5D9BD22C26B560000B538 /* Users */,
 				92F5218622BA240E002B496E /* Chat */,
 				92F5217B22BA0E89002B496E /* Chats */,
 				9290A4BE22A2378D0024D8A8 /* CreatePost */,
@@ -652,6 +658,7 @@
 				926C2E192281DB07001FC1D2 /* InfoUserTableViewCell.xib in Resources */,
 				9295BB2B229D60F200050C91 /* LoginViewController.xib in Resources */,
 				9271393E228BFB3E00CC441B /* HeaderTitleView.xib in Resources */,
+				92B5D9C122C26B6D0000B538 /* UsersViewController.xib in Resources */,
 				92A45782229D940F00D1C47D /* UserHeaderView.xib in Resources */,
 				928B526322BEBF2500754198 /* OponentTextMessageTableViewCell..xib in Resources */,
 				92C9889F227C8CAA00E8BD7F /* LaunchScreen.storyboard in Resources */,
@@ -787,6 +794,7 @@
 				9295BB2E229D651500050C91 /* TextField.swift in Sources */,
 				92D9B32F227DD3EE00A76933 /* PhotoView.swift in Sources */,
 				92C98895227C8CA800E8BD7F /* AppDelegate.swift in Sources */,
+				92B5D9C022C26B6D0000B538 /* UsersViewController.swift in Sources */,
 				92A8F888229C141700860804 /* Validator.swift in Sources */,
 				925D7554228D465F00ABD650 /* TextFieldTableViewCell.swift in Sources */,
 				92D9B326227DCEB100A76933 /* StartRouter.swift in Sources */,
