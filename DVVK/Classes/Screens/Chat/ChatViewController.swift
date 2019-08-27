@@ -23,10 +23,11 @@ class ChatViewController: UIViewController {
     self.user = user
     self.chat = chat
   }
- 
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-  controller.viewDidLoad()
+    
+    controller.viewDidLoad()
     tableView.separatorColor = .clear
   }
   

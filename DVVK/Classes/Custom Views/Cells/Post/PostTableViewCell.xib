@@ -45,7 +45,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imageViewHeigtConstraint" destination="Ub5-Dp-hae" id="O1y-RI-lMs"/>
+                <outlet property="imageViewHeightConstraint" destination="Ub5-Dp-hae" id="O1y-RI-lMs"/>
                 <outlet property="postImageView" destination="RLw-5P-ypD" id="IYM-E3-nBQ"/>
                 <outlet property="textView" destination="ncY-Ml-WbA" id="EbK-NM-n2l"/>
             </connections>

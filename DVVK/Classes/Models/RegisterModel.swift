@@ -31,6 +31,7 @@ class RegisterModel{
       "birthday": (birthday ?? Date()).timeIntervalSince1970 
     ]
   }
+  
   init() {
     self.userId = UUID.init().uuidString
   }

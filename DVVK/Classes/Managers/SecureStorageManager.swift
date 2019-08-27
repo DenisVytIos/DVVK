@@ -15,7 +15,7 @@ final class SecureStorageManager {
   let myUserAccountIdentifier = "MyUserAccountIdentifier"
   
   private init() {}
- 
+  
   func save(email: String?, password: String?, completionHandler: ItemClosure<CustomErrors?>) {
     guard let email = email, let password = password else
     {
@@ -25,6 +25,7 @@ final class SecureStorageManager {
     let data = [Keys.email.rawValue: email,
                 Keys.password.rawValue: password]
     do {
+      //updateData
       try Locksmith.saveData(data: data, forUserAccount: myUserAccountIdentifier)
       completionHandler(nil)
     }
@@ -46,10 +47,7 @@ final class SecureStorageManager {
     let dictionary = Locksmith.loadDataForUserAccount(userAccount: myUserAccountIdentifier)
     let email = dictionary?[Keys.email.rawValue] as? String ?? nil
     let password = dictionary?[Keys.password.rawValue] as? String ?? nil
-
     return (email: email, password: password)
-    
-    
   }
   
   func isLoggedIn() -> Bool {

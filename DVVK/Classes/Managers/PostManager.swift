@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 final class PostManager: FirebaseManager {
-
+  
   private override init() {}
   
   static let shared = PostManager()
@@ -41,7 +41,7 @@ final class PostManager: FirebaseManager {
         return
       }
       completion(.success(post))
-
+      
     }
   }
   
@@ -67,20 +67,20 @@ final class PostManager: FirebaseManager {
     }
   }
 }
-  extension PostManager {
-    fileprivate enum Keys: String {
-      case posts
-    }
-    
-    
-    enum LoadedPostResult {
-      case success([Post])
-      case error(String)
-    }
-    
-    enum CreatedPostResult {
-      case success(Post)
-      case error(String)
-    }
+
+extension PostManager {
+  fileprivate enum Keys: String {
+    case posts
   }
+  
+  enum LoadedPostResult {
+    case success([Post])
+    case error(String)
+  }
+  
+  enum CreatedPostResult {
+    case success(Post)
+    case error(String)
+  }
+}
 

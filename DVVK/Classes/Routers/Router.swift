@@ -9,19 +9,19 @@
 import UIKit
 
 final class Router{
-    static let shared = Router()
+  static let shared = Router()
+  
+  private init(){}
+  
+  func root(_ window: inout UIWindow?) {
+    let frame = UIScreen.main.bounds
+    window = UIWindow(frame: frame)
+    window?.makeKeyAndVisible()
+
+    let vc = SecureStorageManager.shared.isLoggedIn() ? startControllerAfterAuth  : ViewController()
     
-    private init(){}
-    
-    func root(_ window: inout UIWindow?) {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.makeKeyAndVisible()
-      
-      let vc = SecureStorageManager.shared.isLoggedIn() ? CreatePostViewController() : ViewController()
-        
-        window?.rootViewController = UINavigationController(rootViewController: vc)
-    }
+    window?.rootViewController = UINavigationController(rootViewController: vc)
+  }
   
   var startControllerAfterAuth: UIViewController {
     
@@ -51,3 +51,4 @@ final class Router{
     return tabBarVC
   }
 }
+

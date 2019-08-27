@@ -10,72 +10,54 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
-
+  
+  var window: UIWindow?
+  
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     Router.shared.root(&window)
     FirebaseApp.configure()
+    
     AuthManager.shared.sighInIfNeeded { _ in
       UserManager.shared.fetchCurrentUser()
     }
+    
+//    AuthManager.shared.sighInIfNeeded()
     /////////////////////////////////////////
-//    AuthManager.shared.sighInIfNeeded { _ in
-//      UserManager.shared.fetchCurrentUser {
-//        UserManager.shared.loadingUsers { users in
-//          let chat = Chat (id: "NEWCHAT", users: [users.first!, UserManager.shared.currentUser!])
-//          ChatManager.shared.startChat(chat: chat, callback: {
+//        AuthManager.shared.sighInIfNeeded { _ in
+//          UserManager.shared.fetchCurrentUser {
+//            UserManager.shared.loadingUsers { users in
+//              let chat = Chat (id: "NEWCHAT", users: [users.first!, UserManager.shared.currentUser!])
+//              ChatManager.shared.startChat(chat: chat, callback: {
 //
-//          })
-//        }
-//      }
-    
-     
-   
- 
-    
-//////////////////////////////
-//    let chat = Chat(id: "123")
-//    ChatManager.shared.loadingMessages(chat: chat) { (messages) in
-//      print(messages)
+//              })
+//            }
+//          }
 //    }
-//
-  //////////////////////////////////
-//    let message = Message()
-//    message.senderId = "123"
-//    message.text = "text"
-//    message.time = Date().timeIntervalSince1970
-//    let chat = Chat(id: "123")
-//    ChatManager.shared.send(message: message, on: chat)
+    //////////////////////////////
+//        let chat = Chat(id: "45656677")
+//        ChatManager.shared.loadingMessages(chat: chat) { (messages) in
+//          print(messages)
+//        }
     
-//SecureStorageManager.shared.eraseUserDataIfNeeded()
+    //////////////////////////////////
+//        let message = Message()
+//        message.senderId = "123"
+//        message.text = "text"
+//        message.time = Date().timeIntervalSince1970
+//    let chat = Chat(id: "45656677")
+//
+//   
+//        ChatManager.shared.send(message: message, on: chat)
+
+//  SecureStorageManager.shared.eraseUserDataIfNeeded()
     return true
   }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
+  
+  
+  
+  
 }
 

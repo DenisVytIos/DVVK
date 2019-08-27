@@ -9,16 +9,13 @@
 import UIKit
 
 final class ChatController: NSObject {
- 
   
   weak var viewController: ChatViewController?
-  
-
   
   var tableView: UITableView? {
     return viewController?.tableView
   }
-
+  
   var chat: Chat?
   
   private let dataProvider = ChatDataProvider()
@@ -35,12 +32,12 @@ final class ChatController: NSObject {
     
     ChatManager.shared.loadingMessages(chat: chat) { (messages) in
       self.dataProvider.set(messages: messages)
-    self.tableView?.reloadData()
+      self.tableView?.reloadData()
     }
   }
   
   private func registerCells() {
-   tableView?.register(TextMessageTableViewCell.nib(isOponent: false), forCellReuseIdentifier: TextMessageTableViewCell.nibName(isOponent: false))
+    tableView?.register(TextMessageTableViewCell.nib(isOponent: false), forCellReuseIdentifier: TextMessageTableViewCell.nibName(isOponent: false))
     tableView?.register(TextMessageTableViewCell.nib(isOponent: true), forCellReuseIdentifier: TextMessageTableViewCell.nibName(isOponent: true))
   }
   
@@ -62,9 +59,8 @@ final class ChatController: NSObject {
     ChatManager.shared.send(message: message, on: chat)
     viewController?.textField.text = nil
   }
- 
-  
 }
+
 extension ChatController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableView.automaticDimension
@@ -91,7 +87,7 @@ extension ChatController: UITableViewDataSource {
 
 extension ChatController: Lifecycable {
   func viewDidAppear() {
-   
+    
   }
   
   func viewDidLoad() {

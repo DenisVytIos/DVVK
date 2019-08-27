@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
   private func addRightButton() {
     let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClicked))
     navigationItem.rightBarButtonItem = button
-//     self.performLogin(email: email, password: password)
+    //     self.performLogin(email: email, password: password)
   }
   
   @objc private func doneButtonClicked() {
@@ -39,18 +39,20 @@ class LoginViewController: UIViewController {
       showAlert(with: "Ошибка", and: "Заполните все поля")
       return
     }
+    
     self.performLogin(email: email, password: password)
     ///////////////////////
-     ///////////
+    ///////////
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-  navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.prefersLargeTitles = true
     navigationController?.setNavigationBarHidden(false, animated: true)
   }
 }
+
 private extension LoginViewController {
   final class Decorator {
     static func decorate(_ vc: LoginViewController) {
@@ -67,20 +69,27 @@ private extension LoginViewController {
     }
   }
 }
+
 private extension LoginViewController {
   func addTargets() {
     authButton.addTarget(self, action: #selector( authButtonClicked), for: .touchUpInside)
   }
   
   func performLogin(email: String?, password: String?) {
-    
     AuthManager.shared.singIn(with: email, and: password) { (result) in
       switch result {
-      case .success: 
-       StartRouter.shared.routeAfterSuccessAuth(from: self)
+      case .success:
+        StartRouter.shared.routeAfterSuccessAuth(from: self)
       case .error(let error):
         self.showAlert(with: "Ошибка", and: error)
       }
+//    AuthManager.shared.sighInIfNeeded {  (result) in
+//            switch result {
+//            case .success:
+//              StartRouter.shared.routeAfterSuccessAuth(from: self)
+//            case .error(let error):
+//              self.showAlert(with: "Ошибка", and: error)
+//            }
     }
   }
   

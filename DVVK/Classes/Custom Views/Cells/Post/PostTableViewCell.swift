@@ -12,10 +12,10 @@ class PostTableViewCell: UITableViewCell, NibLoadable {
   
   @IBOutlet private weak var textView: UITextView!
   @IBOutlet private weak var postImageView: UIImageView!
-  @IBOutlet private weak var imageViewHeigtConstraint: NSLayoutConstraint!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()   
+  @IBOutlet private weak var imageViewHeightConstraint: NSLayoutConstraint!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
   }
 }
 
@@ -25,9 +25,9 @@ extension PostTableViewCell {
     textView.text = post.text ?? ""
     if let imageData = post.imageData {
       postImageView.image = UIImage(data: imageData)
-      imageViewHeigtConstraint.constant = Sizes.postImageHeight
+      imageViewHeightConstraint.constant = Sizes.postImageHeight
     } else {
-      imageViewHeigtConstraint.constant = Sizes.zero
+      imageViewHeightConstraint.constant = Sizes.zero
     }
   }
 }

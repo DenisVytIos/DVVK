@@ -20,6 +20,7 @@ class SegmenterTableViewCell: UITableViewCell, NibLoadable {
     selectionStyle = .none
     addTargets()
   }
+  
   func set(titles: [String])  {
     segmentControl.removeAllSegments()
     titles.enumerated().forEach { i, title in
@@ -27,9 +28,11 @@ class SegmenterTableViewCell: UITableViewCell, NibLoadable {
     }
     segmentControl.selectedSegmentIndex = 0
   }
+  
   private func addTargets() {
     segmentControl.addTarget(self, action: #selector(segmentedControlChangedIndex(sender:)), for: .valueChanged)
   }
+  
   @objc private func segmentedControlChangedIndex(sender: UISegmentedControl) {
     indexChanged?(sender.selectedSegmentIndex)
   }

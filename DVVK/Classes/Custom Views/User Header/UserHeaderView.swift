@@ -21,4 +21,5 @@ class UserHeaderView: UIView, NibLoadable {
     
     avatarView.round()
   }
+  
 }

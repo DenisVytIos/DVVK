@@ -21,7 +21,7 @@ class TextMessageTableViewCell: UITableViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-
+    
     cloudView.layer.cornerRadius = 10
   }
   
@@ -29,8 +29,8 @@ class TextMessageTableViewCell: UITableViewCell {
     messageLabel.text = message.getText()
     timeLabel.text = message.getFormattedTime()
   }
-  
 }
+
 extension TextMessageTableViewCell {
   static func nibName(isOponent: Bool) -> String {
     switch isOponent {

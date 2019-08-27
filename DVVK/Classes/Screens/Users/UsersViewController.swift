@@ -9,23 +9,23 @@
 import UIKit
 
 class UsersViewController: UIViewController {
-  
+
   @IBOutlet weak var tableView: UITableView!
   private var users: [DVUser] = [] {
     didSet{
       tableView.reloadData()
     }
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     delegating()
-    UserManager.shared.loadingUsers { user in
-      self.users = user
+    UserManager.shared.loadingUsers { users in
+      self.users = users
     }
   }
-  
+
   private func delegating() {
     tableView.delegate = self
     tableView.dataSource = self
@@ -43,7 +43,7 @@ extension  UsersViewController: UITableViewDelegate {
       self.showAlert(with: " Готово", and: "Чат создан")
     }
   }
-  
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 44
   }
@@ -60,3 +60,5 @@ extension  UsersViewController: UITableViewDataSource {
     return users.count
   }
 }
+
+

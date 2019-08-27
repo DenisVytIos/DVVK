@@ -50,9 +50,10 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBt-nA-gy7">
-                    <rect key="frame" x="55" y="165" width="304" height="200"/>
+                    <rect key="frame" x="107" y="165" width="200" height="200"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="sMN-tv-ljz"/>
+                        <constraint firstAttribute="height" constant="200" id="Pt8-2s-HK2"/>
+                        <constraint firstAttribute="width" constant="200" id="qKO-Ud-JqZ"/>
                     </constraints>
                     <state key="normal" title="Button" image="face_id"/>
                 </button>
@@ -60,11 +61,12 @@
             <color key="backgroundColor" name="grayColor"/>
             <constraints>
                 <constraint firstItem="BTC-wN-1ML" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="36g-wm-vD2"/>
-                <constraint firstItem="CBt-nA-gy7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="55" id="65b-4c-yrL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CBt-nA-gy7" secondAttribute="trailing" constant="55" id="Nrm-Q4-8rg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CBt-nA-gy7" secondAttribute="trailing" constant="16" id="9es-vT-SFb"/>
+                <constraint firstItem="CBt-nA-gy7" firstAttribute="centerX" secondItem="BTC-wN-1ML" secondAttribute="centerX" id="DZc-An-ZhQ"/>
                 <constraint firstItem="BTC-wN-1ML" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZRD-YZ-7Z3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BTC-wN-1ML" secondAttribute="trailing" id="ddA-qL-lHF"/>
                 <constraint firstItem="CBt-nA-gy7" firstAttribute="top" secondItem="BTC-wN-1ML" secondAttribute="bottom" constant="16" id="f7I-7i-Sdf"/>
+                <constraint firstItem="CBt-nA-gy7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="x2D-nU-edS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

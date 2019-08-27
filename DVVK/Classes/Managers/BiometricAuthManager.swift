@@ -41,12 +41,12 @@ class BiometricAuthManager {
     }
   }
   
-//  func authenticateUser(completion: @escaping ItemClosure<CustomErrors?>){
-//
-//    guard isBiometricAuthSupported() else {
-//      completion(CustomErrors.biometricAuthError("Biometric auth isn't available"))
-//      return
-//    }
+  //  func authenticateUser(completion: @escaping ItemClosure<CustomErrors?>){
+  //
+  //    guard isBiometricAuthSupported() else {
+  //      completion(CustomErrors.biometricAuthError("Biometric auth isn't available"))
+  //      return
+  //    }
   
   func authenticateUser(completion: @escaping ItemClosure<CustomErrors?>) {
     

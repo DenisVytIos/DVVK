@@ -1,12 +1,12 @@
  //
-//  Post.swift
-//  DVVK
-//
-//  Created by Denis on 6/1/19.
-//  Copyright © 2019 Denis. All rights reserved.
-//
-
-import Foundation
+ //  Post.swift
+ //  DVVK
+ //
+ //  Created by Denis on 6/1/19.
+ //  Copyright © 2019 Denis. All rights reserved.
+ //
+ 
+ import Foundation
  import Firebase
  
  class Post: Codable {
@@ -15,6 +15,7 @@ import Foundation
     case textAndImage
     case image
   }
+  
   var id: String
   var type: Type
   var text: String?

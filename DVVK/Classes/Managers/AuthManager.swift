@@ -14,9 +14,10 @@ import FirebaseAuth
 class AuthManager: FirebaseManager {
   var currentUser: User?
   static let shared = AuthManager()
-
+  //  private init() {}
   private let auth = Auth.auth()
-//  FirebaseResult
+  //  FirebaseResult
+  
   func sighInIfNeeded(completion:  ItemClosure<FirebaseResult>? = nil) {
     let credentials = SecureStorageManager.shared.loadEmailAndPassword()
     
@@ -31,12 +32,11 @@ class AuthManager: FirebaseManager {
       completion(FirebaseResult.error("Something wrong with email or password.Please try again"))
       return
     }
-
+    
     auth.signIn(withEmail: email, password: password)  { (result, error) in
       
       if let error = error {
         completion(FirebaseResult.error(error.localizedDescription))
-
         return
       }
       guard let user = result?.user else {
@@ -62,15 +62,14 @@ class AuthManager: FirebaseManager {
       completion(.failure(CustomErrors.invalidEmail))
       return
     }
-    
     //   let userRef = sourseRef.child("users")
-   let id = model.userId
+    let id = model.userId
     auth.createUser(withEmail: email, password: password) { (result, error) in
       if let error = error {
         completion(.failure(error))
         return
-
       }
+      
       guard let res = result else {
         completion(.failure(CustomErrors.unknownError))
         return

@@ -20,13 +20,13 @@ final class ChatManager: FirebaseManager {
     guard let chatId = chat.id else {
       return
     }
-    
+  
     chatsRef.child(chatId).child("messages").child(message.id).setValue(dict)
   }
   
   func startChatIfNeeded(chat: Chat, callback: @escaping VoidClosure) {
     checkIsChatExist(chat: chat) { (result) in
-      if result {
+      if !result {
         self.startChat(chat: chat, callback: callback)
       }
     }
@@ -58,12 +58,12 @@ final class ChatManager: FirebaseManager {
   
   func loadingChats(callback: @escaping ItemClosure<[Chat]>) {
     chatsRef.observe(.value) { (snapshot) in
-      if let dict = snapshot.value as? [String: Any] {
+      if let dict = snapshot.value as?  [String: Any] {
         let chats = dict.map({ (element) -> Chat? in
           let chatId = element.key
           
           if let chatDict = element.value as? [String: Any], let usersDict = chatDict["users"] as? [[String: Any]] {
-           let users = usersDict.map { try? DVUser.init(from: $0) }.compactMap { $0 }
+            let users = usersDict.map { try? DVUser.init(from: $0) }.compactMap { $0 }
             return Chat.init(id: chatId, users: users)
           }
           return nil
@@ -75,14 +75,14 @@ final class ChatManager: FirebaseManager {
   }
   
   func loadingMessages(chat: Chat, callback: @escaping ItemClosure<[Message]>) {
-    // Chats -> id -> messages
+    // Chats -> id Chats -> messages
     guard let chatId = chat.id else {
       return
     }
     let messagesRef = chatsRef.child(chatId).child("messages")
     messagesRef.observe(.value) { (snapshot) in
       if let dict = snapshot.value as? [String: [String: Any]] {
-        let messages = dict.map{ try?  Message.init(from: $0.value) }.compactMap { $0 }.sorted { $0.time ?? 0 < $1.time ?? 0}
+        let messages = dict.map{ try?  Message.init(from: $0.value) }.compactMap { $0 }.sorted { $0.time ?? 0 < $1.time ?? 0 }
         callback(messages)
       }
     }

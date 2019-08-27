@@ -15,7 +15,7 @@ final class CreatePostModel {
   func set(text: String?) { 
     self.text = text
   }
- 
+  
   func set(image: UIImage?) {
     self.image = image
   }

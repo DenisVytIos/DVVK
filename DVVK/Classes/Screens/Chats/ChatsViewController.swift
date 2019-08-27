@@ -17,15 +17,15 @@ class ChatsViewController: UIViewController {
     }
   }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        delegating()
-      ChatManager.shared.loadingChats { [unowned self] (chats) in
-        self.chats = chats
-      }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    delegating()
+    ChatManager.shared.loadingChats { [unowned self] (chats) in
+      self.chats = chats
     }
-
+  }
+  
   private func delegating() {
     tableView.delegate = self
     tableView.dataSource = self
@@ -40,8 +40,8 @@ extension ChatsViewController: UITableViewDelegate {
       let vc = ChatViewController(user: oponent, chat: chat)
       navigationController?.pushViewController(vc, animated: true)
     }
-   
   }
+  
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 44
   }
