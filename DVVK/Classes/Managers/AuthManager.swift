@@ -57,7 +57,7 @@ class AuthManager: FirebaseManager {
       completion(.failure(CustomErrors.unknownError))
       return
     }
-    
+  
     guard Validators.isSimpleEmail(email) else {
       completion(.failure(CustomErrors.invalidEmail))
       return

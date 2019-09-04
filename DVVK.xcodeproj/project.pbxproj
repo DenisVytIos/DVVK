@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CE85C96D010804D2D5EC244 /* Pods_DVVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CF142C61D2F90D6FB4421A /* Pods_DVVK.framework */; };
 		9203E48F22A27FCB004D9D6C /* Extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203E48E22A27FCA004D9D6C /* Extension+Encodable.swift */; };
 		9203FEFC22AD3D8C009B8DBF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203FEFA22AD3D8C009B8DBF /* PostTableViewCell.swift */; };
 		9203FEFD22AD3D8C009B8DBF /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9203FEFB22AD3D8C009B8DBF /* PostTableViewCell.xib */; };
@@ -83,7 +84,6 @@
 		92FA0E362292967F00AF78BE /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E352292967F00AF78BE /* Sex.swift */; };
 		92FA0E3822929C1A00AF78BE /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA0E3722929C1A00AF78BE /* Extensions+UIViewController.swift */; };
 		92FB4CCB22BC94F600844907 /* ChatDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB4CCA22BC94F600844907 /* ChatDataProvider.swift */; };
-		9B4D2E01D709BE12B23247B2 /* Pods_DVVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29C1ABDC8DC6CF09414108B4 /* Pods-DVVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.debug.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.debug.xcconfig"; sourceTree = "<group>"; };
-		482443A7285DB07BECD66478 /* Pods-DVVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.release.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.release.xcconfig"; sourceTree = "<group>"; };
+		699697CDB5B10D25D61F2730 /* Pods-DVVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.debug.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.debug.xcconfig"; sourceTree = "<group>"; };
 		9203E48E22A27FCA004D9D6C /* Extension+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Encodable.swift"; sourceTree = "<group>"; };
 		9203FEFA22AD3D8C009B8DBF /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		9203FEFB22AD3D8C009B8DBF /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
@@ -179,7 +178,8 @@
 		92FA0E352292967F00AF78BE /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
 		92FA0E3722929C1A00AF78BE /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		92FB4CCA22BC94F600844907 /* ChatDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataProvider.swift; sourceTree = "<group>"; };
-		EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1CF142C61D2F90D6FB4421A /* Pods_DVVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E62808E01561A9690B2B1592 /* Pods-DVVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVVK.release.xcconfig"; path = "Target Support Files/Pods-DVVK/Pods-DVVK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B4D2E01D709BE12B23247B2 /* Pods_DVVK.framework in Frameworks */,
+				3CE85C96D010804D2D5EC244 /* Pods_DVVK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,19 +201,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E68D6336868E90235B8BDEB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EE986F003A53E11AEACB7FC3 /* Pods_DVVK.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		8142E2D70E23790ACC05DC4E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				29C1ABDC8DC6CF09414108B4 /* Pods-DVVK.debug.xcconfig */,
-				482443A7285DB07BECD66478 /* Pods-DVVK.release.xcconfig */,
+				699697CDB5B10D25D61F2730 /* Pods-DVVK.debug.xcconfig */,
+				E62808E01561A9690B2B1592 /* Pods-DVVK.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -392,7 +384,7 @@
 				92C988A8227C8CAA00E8BD7F /* DVVKTests */,
 				92C98892227C8CA800E8BD7F /* Products */,
 				8142E2D70E23790ACC05DC4E /* Pods */,
-				6E68D6336868E90235B8BDEB /* Frameworks */,
+				F59444F1F7EF1E724414597B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -570,6 +562,14 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		F59444F1F7EF1E724414597B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1CF142C61D2F90D6FB4421A /* Pods_DVVK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -577,11 +577,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92C988AE227C8CAA00E8BD7F /* Build configuration list for PBXNativeTarget "DVVK" */;
 			buildPhases = (
-				AA29AD7151D1728D05F57A82 /* [CP] Check Pods Manifest.lock */,
+				3D347118E8F4F2F95C63931D /* [CP] Check Pods Manifest.lock */,
 				92C9888D227C8CA800E8BD7F /* Sources */,
 				92C9888E227C8CA800E8BD7F /* Frameworks */,
 				92C9888F227C8CA800E8BD7F /* Resources */,
-				E8E6FA82CAEB4B1F783CB7CA /* [CP] Embed Pods Frameworks */,
+				A86A2AEC9EA30184C37B223E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -686,7 +686,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AA29AD7151D1728D05F57A82 /* [CP] Check Pods Manifest.lock */ = {
+		3D347118E8F4F2F95C63931D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -708,7 +708,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8E6FA82CAEB4B1F783CB7CA /* [CP] Embed Pods Frameworks */ = {
+		A86A2AEC9EA30184C37B223E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -938,7 +938,7 @@
 		};
 		92C988AF227C8CAA00E8BD7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29C1ABDC8DC6CF09414108B4 /* Pods-DVVK.debug.xcconfig */;
+			baseConfigurationReference = 699697CDB5B10D25D61F2730 /* Pods-DVVK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -958,7 +958,7 @@
 		};
 		92C988B0227C8CAA00E8BD7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 482443A7285DB07BECD66478 /* Pods-DVVK.release.xcconfig */;
+			baseConfigurationReference = E62808E01561A9690B2B1592 /* Pods-DVVK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

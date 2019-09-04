@@ -55,7 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //  SecureStorageManager.shared.eraseUserDataIfNeeded()
     return true
   }
-  
+  private func configureExternalFrameworks() {
+    FirebaseApp.configure()
+  }
   
   
   
